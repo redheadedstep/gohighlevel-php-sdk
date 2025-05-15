@@ -255,8 +255,10 @@ final readonly class Payload
                 $body = $streamBuilder->build();
 
                 $headers = $headers->withContentType($this->contentType, '; boundary='.$streamBuilder->getBoundary());
-            } else {
+            } else if ($this->contentType === ContentType::JSON) {
                 $body = $psr17Factory->createStream(json_encode($this->parameters, JSON_THROW_ON_ERROR));
+            } else {
+                $body = $psr17Factory->createStream(http_build_query($this->parameters));
             }
         }
 

@@ -139,7 +139,8 @@ final readonly class HttpTransporter implements TransporterContract
             $response = json_decode($contents, true, flags: JSON_THROW_ON_ERROR);
 
             // @phpstan-ignore-next-line
-            if (isset($response['error'])) {
+            // responses from GHL may have the error key but not the code or message key and be valid JSON
+            if (isset($response['error']) && isset($response['message']) && isset($response['code'])) {
                 // @phpstan-ignore-next-line
                 throw new ErrorException($response);
             }
