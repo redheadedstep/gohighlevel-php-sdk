@@ -1,5 +1,5 @@
 {
-    "name": "redheadedstep/gohighlevel-php",
+    "name": "musheabdulhakim/gohighlevel-php",
     "description": "php sdk for gohighlevel api",
     "keywords": ["php", "ghl","gohighlevel","gohighlevel-sdk","api","sdk", "package"],
     "license": "MIT",
@@ -7,10 +7,6 @@
         {
             "name": "Mushe Abdul-Hakim",
             "email": "musheabdulhakim99@gmail.com"
-        },
-        {
-            "name": "Mark Hobson",
-            "email": "redheadedstep@me.com"
         }
     ],
     "require": {
